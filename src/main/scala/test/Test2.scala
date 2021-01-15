@@ -12,6 +12,9 @@ object Test2 {
     val edgeInput: RDD[String] = sc.textFile("src/main/resources/edge.csv")
     val vertexInput: RDD[String] = sc.textFile("src/main/resources/vertex.csv")
 
+
+
+
     val vertext: RDD[(Long, (String, String))] = vertexInput.map(line => {
       val items = line.split(",")
       (items(0).toLong, ("label" -> items(3)))

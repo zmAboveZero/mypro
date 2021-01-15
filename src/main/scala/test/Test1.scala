@@ -18,6 +18,17 @@ object Test1 {
     println(input.isCheckpointed)
     println(input3.dependencies.length)
 
+
+
+
+
+
+
+
+
+
+
+
     //    sc.getRDDStorageInfo.foreach(e => println(e.name))
 
 
