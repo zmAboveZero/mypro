@@ -1,5 +1,11 @@
-object Test3 {
+object t3 {
   def main(args: Array[String]): Unit = {
-    println("test3")
+
+
+
+
+"fsdfsfadfasfsaf"
+
+
   }
 }
