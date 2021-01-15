@@ -10,7 +10,7 @@ gen
 ### Scala template
 *.class
 *.log
-
+/target/
 ### Java template
 # Compiled class file
 *.class

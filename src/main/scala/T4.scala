@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
 
-object Test2 {
+object T4 {
   def main(args: Array[String]): Unit = {
     val ss = SparkSession.builder().master("local[1]").appName("test").getOrCreate()
     //    ss.sparkContext. setLogLevel( "ERROR" )

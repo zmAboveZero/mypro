@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
 
-object t2 {
+object T2 {
   def main(args: Array[String]): Unit = {
 
 
