@@ -6,6 +6,10 @@ object Test2 {
     println("hello spark")
     println("hello spark")
     println("hello spark")
+    println("hello spark")
+    println("hello spark")
+    println("hello spark")
+    println("hello spark")
 
 
 
