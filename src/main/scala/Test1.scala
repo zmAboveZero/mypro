@@ -4,6 +4,8 @@ object Test1 {
     println("hello world")
     println("hello world")
     println("hello world")
+
+    println("chekoufasfaf")
   }
 
 }
