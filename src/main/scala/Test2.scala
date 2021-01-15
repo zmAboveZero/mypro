@@ -9,6 +9,8 @@ object Test2 {
     println("zhaomeng")
     println("zhaomeng")
     println("zhaomeng")
+    println("zhaomeng")
+    println("zhaomeng")
 
   }
 
