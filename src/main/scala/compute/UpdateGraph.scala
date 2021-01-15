@@ -1,8 +1,8 @@
-package com.zm.compute
+package com.zm2.compute
 
-import com.zm.tables.T4entity.{SNA_ENTITY_CAR, SNA_ENTITY_CASE, SNA_ENTITY_PERSON, SNA_ENTITY_TEL}
-import com.zm.tables.T4rel.{SNA_REL_CAR_CASE, SNA_REL_PERSON_CAR, SNA_REL_PERSON_TEL, SNA_REL_TEL_CASE}
-import com.zm.tables.T5InitialGraph.SNA_CLUSTER_VERTEX
+import com.zm2.tables.T4entity.{SNA_ENTITY_CAR, SNA_ENTITY_CASE, SNA_ENTITY_PERSON, SNA_ENTITY_TEL}
+import com.zm2.tables.T4rel.{SNA_REL_CAR_CASE, SNA_REL_PERSON_CAR, SNA_REL_PERSON_TEL, SNA_REL_TEL_CASE}
+import com.zm2.tables.T5InitialGraph.SNA_CLUSTER_VERTEX
 import org.apache.spark.graphx.{Edge, Graph, VertexId, VertexRDD}
 import org.apache.spark.graphx.lib.LabelPropagation
 import org.apache.spark.rdd.RDD

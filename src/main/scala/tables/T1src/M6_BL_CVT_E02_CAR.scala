@@ -1,4 +1,4 @@
-package com.zm.tables.T1src
+package com.zm2.tables.T1src
 
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import org.apache.spark.sql.{Row, SparkSession}

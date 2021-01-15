@@ -1,4 +1,4 @@
-package com.zm.test
+package com.zm2.test
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema

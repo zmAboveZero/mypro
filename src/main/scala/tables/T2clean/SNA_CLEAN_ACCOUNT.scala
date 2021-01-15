@@ -1,4 +1,4 @@
-package com.zm.tables.T2clean
+package com.zm2.tables.T2clean
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{Row, SparkSession}

@@ -1,4 +1,4 @@
-package com.zm.tables.T3help
+package com.zm2.tables.T3help
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{Row, SparkSession}

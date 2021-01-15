@@ -1,6 +1,6 @@
-package com.zm.compute
+package com.zm2.compute
 
-import com.zm.tables.T5InitialGraph.{SNA_CLUSTER_EDGE, SNA_CLUSTER_VERTEX}
+import com.zm2.tables.T5InitialGraph.{SNA_CLUSTER_EDGE, SNA_CLUSTER_VERTEX}
 import org.apache.spark.sql.SparkSession
 
 object AnalyseGraph {

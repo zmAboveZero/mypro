@@ -1,6 +1,6 @@
-package com.zm.compute
+package com.zm2.compute
 
-import com.zm.tables.T3help.SNA_HELP_PERSON
+import com.zm2.tables.T3help.SNA_HELP_PERSON
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}

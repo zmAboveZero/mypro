@@ -1,6 +1,6 @@
-package com.zm.compute
+package com.zm2.compute
 
-import com.zm.tables.T1src._
+import com.zm2.tables.T1src._
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object ETL_person {

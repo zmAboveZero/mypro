@@ -1,4 +1,4 @@
-package com.zm.tables.T4entity
+package com.zm2.tables.T4entity
 
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.types.{StringType, StructField, StructType}

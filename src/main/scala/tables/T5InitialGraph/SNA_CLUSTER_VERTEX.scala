@@ -1,4 +1,4 @@
-package com.zm.tables.T5InitialGraph
+package com.zm2.tables.T5InitialGraph
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.types.{StringType, StructField, StructType}

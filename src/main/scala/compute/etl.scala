@@ -1,4 +1,4 @@
-package com.zm.compute
+package com.zm2.compute
 
 import org.apache.spark.sql.SparkSession
 
