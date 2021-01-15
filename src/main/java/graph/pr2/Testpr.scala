@@ -1,4 +1,4 @@
-package pr2
+package graph.pr2
 
 object Testpr {
   def main(args: Array[String]): Unit = {

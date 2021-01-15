@@ -1,4 +1,4 @@
-package pr1;
+package graph.pr1;
 
 import java.util.ArrayList;
 public class Node {

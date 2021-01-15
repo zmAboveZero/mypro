@@ -21,14 +21,6 @@ object Test1 {
 
 
 
-
-
-
-
-
-
-
-
     //    sc.getRDDStorageInfo.foreach(e => println(e.name))
 
 
@@ -40,7 +32,7 @@ object Test1 {
     //    println(input.glom().count())
     //    input.retag
     //    input.mapPartitionsWithIndex((index, it) => it)
-        input.collect()
+    input.collect()
     //    val haha: RDD[(Int, Int, Int)] = sc.parallelize(Array((1, 2, 5)))
     //    haha.map { case (a, b, uu) => 99 }
     //    input.partitions.foreach(e => println(e.index))

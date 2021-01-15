@@ -1,4 +1,4 @@
-package pr3;
+package graph.pr3;
 
 import java.util.ArrayList;
 import java.util.List;

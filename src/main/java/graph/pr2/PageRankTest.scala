@@ -1,4 +1,4 @@
-package pr2
+package graph.pr2
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
