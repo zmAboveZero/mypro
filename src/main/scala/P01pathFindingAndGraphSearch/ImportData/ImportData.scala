@@ -28,9 +28,7 @@ object ImportData {
     val edges: RDD[Edge[None.type]] = reli.map(e => Edge(e._1, e._2, None))
     val graph = Graph(vertex, edges)
     graph.inDegrees
-    ShortestPaths.run(graph,Array(8L,3L,1L)).vertices.foreach(println(_))
-
-
+    ShortestPaths.run(graph, Array(8L, 3L, 1L)).vertices.foreach(println(_))
 
 
     val graphStream: SingleGraph = new SingleGraph("P03CommunityDetection");
@@ -41,14 +39,14 @@ object ImportData {
     // load the graphX vertices into GraphStream
     for ((id, name) <- graph.vertices.collect()) {
       val node = graphStream.addNode(id.toString).asInstanceOf[SingleNode]
-      node.addAttribute("ui.label", id+"")
+      node.addAttribute("ui.label", id + "")
     }
     //    for ((id, name) <- graph.vertices.collect()) {
     //      val node = graphStream.getNode(id.toString).asInstanceOf[SingleNode]
     //      val x: java.lang.Double = (label - min) / delt.toDouble
     //      node.setAttribute("ui.color", x)
     //    }
-//    graph.edges.collect().foreach(println(_))
+    //    graph.edges.collect().foreach(println(_))
     for (Edge(x, y, link) <- graph.edges.collect()) {
       val edge = graphStream.addEdge(x.toString ++ y.toString, x.toString, y.toString, true).asInstanceOf[AbstractEdge]
     }
