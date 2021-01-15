@@ -1,4 +1,4 @@
-// Generated from F:/IDEA_PROJECTS/testHBase/src\AntlrTest.g4 by ANTLR 4.8
+package antlr;// Generated from F:/IDEA_PROJECTS/testHBase/src\AntlrTest.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

@@ -1,6 +1,11 @@
-// Generated from F:/IDEA_PROJECTS/testHBase/src\AntlrTest.g4 by ANTLR 4.8
+package antlr;// Generated from F:/IDEA_PROJECTS/testHBase/src\AntlrTest.g4 by ANTLR 4.8
 
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.NoViableAltException;
+import org.antlr.v4.runtime.Parser;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.atn.ATN;
 import org.antlr.v4.runtime.atn.ATNDeserializer;
 import org.antlr.v4.runtime.atn.ParserATNSimulator;
@@ -120,7 +125,7 @@ public class AntlrTestParser extends Parser {
 		}
 	}
 
-	public final ProgContext prog() throws RecognitionException {
+	public final ProgContext prog() throws org.antlr.v4.runtime.RecognitionException {
 		ProgContext _localctx = new ProgContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_prog);
 		int _la;
@@ -143,7 +148,7 @@ public class AntlrTestParser extends Parser {
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << ID) | (1L << INT) | (1L << NEWLINE))) != 0) );
 			}
 		}
-		catch (RecognitionException re) {
+		catch (org.antlr.v4.runtime.RecognitionException re) {
 			_localctx.exception = re;
 			_errHandler.reportError(this, re);
 			_errHandler.recover(this, re);
@@ -224,7 +229,7 @@ public class AntlrTestParser extends Parser {
 		}
 	}
 
-	public final StatContext stat() throws RecognitionException {
+	public final StatContext stat() throws org.antlr.v4.runtime.RecognitionException {
 		StatContext _localctx = new StatContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_stat);
 		try {
@@ -265,7 +270,7 @@ public class AntlrTestParser extends Parser {
 				break;
 			}
 		}
-		catch (RecognitionException re) {
+		catch (org.antlr.v4.runtime.RecognitionException re) {
 			_localctx.exception = re;
 			_errHandler.reportError(this, re);
 			_errHandler.recover(this, re);
@@ -374,11 +379,11 @@ public class AntlrTestParser extends Parser {
 		}
 	}
 
-	public final ExprContext expr() throws RecognitionException {
+	public final ExprContext expr() throws org.antlr.v4.runtime.RecognitionException {
 		return expr(0);
 	}
 
-	private ExprContext expr(int _p) throws RecognitionException {
+	private ExprContext expr(int _p) throws org.antlr.v4.runtime.RecognitionException {
 		ParserRuleContext _parentctx = _ctx;
 		int _parentState = getState();
 		ExprContext _localctx = new ExprContext(_ctx, _parentState);
@@ -444,7 +449,7 @@ public class AntlrTestParser extends Parser {
 						_errHandler.recoverInline(this);
 						}
 						else {
-							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							if ( _input.LA(1)== org.antlr.v4.runtime.Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
@@ -464,7 +469,7 @@ public class AntlrTestParser extends Parser {
 						_errHandler.recoverInline(this);
 						}
 						else {
-							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							if ( _input.LA(1)== org.antlr.v4.runtime.Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
@@ -481,7 +486,7 @@ public class AntlrTestParser extends Parser {
 			}
 			}
 		}
-		catch (RecognitionException re) {
+		catch (org.antlr.v4.runtime.RecognitionException re) {
 			_localctx.exception = re;
 			_errHandler.reportError(this, re);
 			_errHandler.recover(this, re);
@@ -514,7 +519,7 @@ public class AntlrTestParser extends Parser {
 		}
 	}
 
-	public final ValueContext value() throws RecognitionException {
+	public final ValueContext value() throws org.antlr.v4.runtime.RecognitionException {
 		ValueContext _localctx = new ValueContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_value);
 		int _la;
