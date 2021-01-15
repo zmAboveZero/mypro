@@ -9,6 +9,8 @@ object T4 {
     ss.sparkContext.parallelize(List((1, 2), (2, 3), (5, 6))).toDF("a", "b").createTempView("t1")
     ss.sparkContext.parallelize(List((1, 2), (2, 3), (5, 6))).toDF("a", "b").createTempView("t2")
 
+
+
     ss.sql(
       """
         |select * from t1  join t2  on t1.a=t2.a
