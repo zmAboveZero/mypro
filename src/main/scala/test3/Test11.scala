@@ -15,6 +15,7 @@ object Test11 {
     //    sc.parallelize(List("1", "2", "3")).zip(sc.parallelize(List(4, 5, 6, 7))).foreach(println(_))
 
 
+
     val t: SparkConf = new SparkConf().setMaster("local").setAppName("t").set("spark.testing.memory", "2147480000")
     val sc = new SparkContext(t)
     sc.stop()
