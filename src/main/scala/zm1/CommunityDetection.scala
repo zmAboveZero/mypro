@@ -1,8 +1,8 @@
 package zm1
 
 /**
-  * Created by mac on 3/16/16.
-  */
+ * Created by mac on 3/16/16.
+ */
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.graphx._
@@ -10,18 +10,16 @@ import org.apache.spark.graphx.lib.LabelPropagation
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.graphstream.graph.implementations.{AbstractEdge, SingleGraph, SingleNode}
+import utils.CommonUtils
 
 /**
-  * 顶点分组并可视化.
-  */
+ * 顶点分组并可视化.
+ */
 object CommunityDetection {
   def main(args: Array[String]): Unit = {
 
-    Logger.getLogger("org").setLevel(Level.ERROR)
-    /**
-      * configuration of spark
-      */
-    val conf: SparkConf = new SparkConf().set("spark.testing.memory", "2147480000").setAppName("CommunityDetection").setMaster("local[*]")
+
+    val conf: SparkConf = new SparkConf().set("spark.testing.memory", "2147480000").setAppName("CommunityDetection").setMaster("local[1]")
     //  conf.setMaster("spark://MacdeMacBook-Pro-3.local:7077")
     val sc = new SparkContext(conf)
     //  sc.addJar("/Users/mac/Documents/GraphXSurvey/SparkTest/out/artifacts/SparkTest_jar/SparkTest.jar")
@@ -46,12 +44,12 @@ object CommunityDetection {
       }
 
       /**
-        * create a graph from files which have specified form
-        *
-        * @param vertexFilePath file path of vertexs.csv
-        * @param edgeFilePath   file path of edges.csv
-        * @return
-        */
+       * create a graph from files which have specified form
+       *
+       * @param vertexFilePath file path of vertexs.csv
+       * @param edgeFilePath   file path of edges.csv
+       * @return
+       */
 
 
       //构建图
@@ -61,13 +59,13 @@ object CommunityDetection {
     }
 
     /**
-      * the main graph
-      */
-    var graph: Graph[Person, Link] = createGraph("C:\\Users\\zm\\Desktop\\graphx\\testttt\\src\\main\\resources\\vertexs.csv", "C:\\Users\\zm\\Desktop\\graphx\\testttt\\src\\main\\resources\\edges.csv")
+     * the main graph
+     */
+    var graph = createGraph(CommonUtils.getResourcesPath() + "vertex.csv", CommonUtils.getResourcesPath() + "edge.csv")
     graph.cache()
     /**
-      * neighbours' vertexId of each vertexId
-      */
+     * neighbours' vertexId of each vertexId
+     */
     val neighbors: RDD[(VertexId, Array[VertexId])] =
       graph.collectNeighborIds(EdgeDirection.Either) //VertexId是Long的别名
     neighbors.cache()
@@ -82,8 +80,8 @@ object CommunityDetection {
     val min = vArray.min()
     val delt = max - min
     /**
-      * Visualize
-      */
+     * Visualize
+     */
     val graphStream: SingleGraph = new SingleGraph("CommunityDetection");
 
     // Set up the visual attributes for graph visualization

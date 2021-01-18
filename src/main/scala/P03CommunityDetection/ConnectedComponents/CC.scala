@@ -4,6 +4,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.graphx.{Edge, Graph, VertexId}
 import org.apache.spark.rdd.RDD
 import org.graphstream.graph.implementations.{AbstractEdge, SingleGraph, SingleNode}
+import utils.CommonUtils
 
 object CC {
   def main(args: Array[String]): Unit = {
@@ -20,7 +21,7 @@ object CC {
 
 
     val graphStream: SingleGraph = new SingleGraph("P03CommunityDetection");
-    graphStream.addAttribute("ui.stylesheet", "url(C:\\Users\\zm\\Desktop\\graphx\\testttt\\src\\main\\scala\\zm\\style\\stylesheet.css)")
+    graphStream.addAttribute("ui.stylesheet", "url("+CommonUtils.getResourcesPath()+"stylesheet.css)")
     graphStream.addAttribute("ui.quality") //to enable slower but better rendering.
     graphStream.addAttribute("ui.antialias") //to enable anti-aliasing(抗锯齿或边缘柔化) of shapes drawn by the viewer
     // load the graphX vertices into GraphStream
