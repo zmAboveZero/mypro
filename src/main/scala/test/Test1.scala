@@ -3,6 +3,7 @@ package test
 import org.apache.spark.graphx.Graph
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
+import utils.CommonUtils
 
 object Test1 {
   def main(args: Array[String]): Unit = {
@@ -11,7 +12,7 @@ object Test1 {
     val input: RDD[String] = sc.textFile("src/main/resources/web-Google.txt", 5)
     val input2 = input.map(e => e)
     val input3 = input.map(e => e)
-    sc.setCheckpointDir("C:\\Users\\zm\\Desktop\\lovainoutput\\hellospark")
+    sc.setCheckpointDir(CommonUtils.getResourcesPath() +"hellospark")
     //    input.checkpoint()
     println(sc.getPersistentRDDs)
     println(input3.count())

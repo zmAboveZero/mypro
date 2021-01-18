@@ -4,13 +4,14 @@ import org.apache.spark.graphx.{Edge, EdgeTriplet, Graph, VertexRDD}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.graphstream.graph.implementations.{AbstractEdge, SingleGraph, SingleNode}
+import utils.CommonUtils
 
 object Test2 {
   def main(args: Array[String]): Unit = {
     val conf: SparkConf = new SparkConf().set("spark.testing.memory", "2147480000").setMaster("local[*]").setAppName("pathFinding")
     val sc = new SparkContext(conf)
-    val edgeInput: RDD[String] = sc.textFile("src/main/resources/edge.csv")
-    val vertexInput: RDD[String] = sc.textFile("src/main/resources/vertex.csv")
+    val edgeInput: RDD[String] = sc.textFile(CommonUtils.getResourcesPath()+"edge.csv")
+    val vertexInput: RDD[String] = sc.textFile(CommonUtils.getResourcesPath()+"vertex.csv")
 
 
 

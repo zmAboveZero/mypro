@@ -1,6 +1,4 @@
-package test;
-
-public class Test6 {
+public class Test3 {
     static int index=0;
     public static void main(String[] args) {
 //        int i = 1;

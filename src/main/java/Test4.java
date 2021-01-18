@@ -1,6 +1,4 @@
-package test;
-
-public class Test7 {
+public class Test4 {
     static int counter=0;
 
     public static void main(String[] args) {
