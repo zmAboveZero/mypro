@@ -12,12 +12,16 @@ object Test1 {
     val input: RDD[String] = sc.textFile("src/main/resources/web-Google.txt", 5)
     val input2 = input.map(e => e)
     val input3 = input.map(e => e)
-    sc.setCheckpointDir(CommonUtils.getResourcesPath() +"hellospark")
+    sc.setCheckpointDir(CommonUtils.getResourcesPath() + "hellospark")
     //    input.checkpoint()
     println(sc.getPersistentRDDs)
     println(input3.count())
     println(input.isCheckpointed)
     println(input3.dependencies.length)
+
+
+    "master commit "
+
 
 
 
