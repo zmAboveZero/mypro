@@ -7,7 +7,6 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 object LPZhu {
   def main(args: Array[String]): Unit = {
-    Logger getLogger ("org") setLevel (Level.ERROR)
     val conf: SparkConf = new SparkConf().setAppName("LPA").setMaster("local[*]")
     val sc = new SparkContext(conf)
     val edges: RDD[Edge[Double]] = sc.parallelize(Array(

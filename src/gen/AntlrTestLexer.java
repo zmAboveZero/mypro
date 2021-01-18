@@ -87,7 +87,7 @@ public class AntlrTestLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "AntlrTest.g4"; }
+	public String getGrammarFileName() { return "antlr/AntlrTest.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

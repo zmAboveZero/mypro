@@ -1,4 +1,4 @@
-object Test22 {
+object FindCirclePath {
 
   def find_cir_starts_with(graph: List[(Int, List[Int])], targetLen: Int, p: List[Int]): Int = {
     var curPath = p
