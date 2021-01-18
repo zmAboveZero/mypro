@@ -8,19 +8,18 @@ import utils.CommonUtils
 
 object CC {
   def main(args: Array[String]): Unit = {
-    val conf: SparkConf = new SparkConf().set("spark.testing.memory", "2147480000").setMaster("local[*]").setAppName("pathFinding")
-    val sc = new SparkContext(conf)
-    val edges: RDD[(Long, Long)] = sc.parallelize(Array((1L, 2L), (2L, 3L), (3L, 1L), (4L, 5L), (5L, 6L), (6L, 4L)))
+    val conf: SparkConf = new SparkConf().set("spark.testing.memory", "2147480000").setMaster("local[1]").setAppName("pathFinding")
+    val edges: RDD[(Long, Long)] = new SparkContext(conf).parallelize(Array((1L, 2L), (2L, 3L), (3L, 1L), (4L, 5L), (5L, 6L), (6L, 4L)))
     val value: RDD[Edge[None.type]] = edges.map(e =>
       Edge(e._1, e._2, None)
     )
-    val graph: Graph[None.type, None.type] = Graph.fromEdges(value, None)
+    val graph= Graph.fromEdges(value, None)
 
-    val ccgraph: Graph[VertexId, None.type] = graph.connectedComponents()
+    val ccgraph= graph.connectedComponents()
     ccgraph.vertices.foreach(println(_))
 
 
-    val graphStream: SingleGraph = new SingleGraph("P03CommunityDetection");
+    val graphStream: SingleGraph = new SingleGraph("P03CommunityDetection")
     graphStream.addAttribute("ui.stylesheet", "url("+CommonUtils.getResourcesPath()+"stylesheet.css)")
     graphStream.addAttribute("ui.quality") //to enable slower but better rendering.
     graphStream.addAttribute("ui.antialias") //to enable anti-aliasing(抗锯齿或边缘柔化) of shapes drawn by the viewer
