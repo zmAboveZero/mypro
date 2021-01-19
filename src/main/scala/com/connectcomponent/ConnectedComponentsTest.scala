@@ -4,20 +4,20 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.graphx.{Edge, Graph, VertexId}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
+import utils.CommonUtils
 
 object ConnectedComponentsTest {
 
   def main(args: Array[String]): Unit = {
-    Logger getLogger ("org") setLevel (Level.ERROR)
-    val conf = new SparkConf().setAppName("Connected Components Test").setMaster("local[1]")
+    val conf = new SparkConf().setAppName("ConnectCom Components Test").setMaster("local[1]")
     val sc = new SparkContext(conf)
 
     case class Person(name: String, age: Int)
-    val people = sc.textFile("src/main/resources/people.csv")
+    val people = sc.textFile(CommonUtils.getResourcesPath()+"people.csv")
     val peopleRDD: RDD[(VertexId, Person)] = people.map(line => line.split(","))
       .map( row => (row(0).toInt, Person(row(1), row(2).toInt)))
 
-    val links = sc.textFile("src/main/resources/links.csv")
+    val links = sc.textFile(CommonUtils.getResourcesPath()+"links.csv")
     type Connection = String
     val linksRDD: RDD[Edge[Connection]] = links.map({line =>
       val row = line.split(",")

@@ -13,10 +13,11 @@ object ConnectCom {
 
 
     case class Person(name: String, age: Int)
-    //    val people = sc.textFile(System.getProperty("user.dir") + "\\src\\main\\resources\\people.csv")
-    val people = sc.textFile(CommonUtils.getResourcesPath() + "edge.csv")
+    val people = sc.textFile(CommonUtils.getResourcesPath() + "people.csv")
+    val edge = sc.textFile(CommonUtils.getResourcesPath() + "edge.csv")
 
     println(people.count())
+    println(edge.count())
     //    val peopleRDD: RDD[(VertexId, Person)] = people.map(line => line.split(","))
     //      .map(row => (row(0).toInt, Person(row(1), row(2).toInt)))
     //
