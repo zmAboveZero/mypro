@@ -2,7 +2,7 @@ package test3
 
 import java.util.concurrent.{Callable, FutureTask}
 
-object Test6 {
+object CallTest {
   def main(args: Array[String]): Unit = {
     //
     val result: Callable[String] = new Callable[String] {
