@@ -3,11 +3,10 @@ package protobuf;
 import java.io.Serializable;
 
 public class Person implements Serializable {
-
     private static final long serialVersionUID = 2690623243047210668L;
 
-    //    基本类型不会被序列化，但会被自动封装为包装类
-//    所有数据类型包装类都是可序列化的
+   //    基本类型不会被序列化，但会被自动封装为包装类
+   //    所有数据类型包装类都是可序列化的
     private Integer pid;
     private String pname;
     private Double score;
