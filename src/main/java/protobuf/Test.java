@@ -2,13 +2,18 @@ package protobuf;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.*;
+import java.util.Arrays;
+
 public class Test {
-    public static void main(String[] args) {
-        gps();
-        person();
+    public static void main(String[] args) throws Exception {
+        common_SerializeAndDeserialize();
+        proto_SerializeAndDeserialize();
+        proto_ser_gps();
+        proto_ser_person();
     }
 
-    public static void gps() {
+    public static void proto_ser_gps() {
         System.out.println("===== 构建一个GPS模型开始 =====");
         GPS.gps_data.Builder gps_builder = GPS.gps_data.newBuilder();
         gps_builder.setAltitude(1);
@@ -41,7 +46,7 @@ public class Test {
         System.out.println("===== 使用gps 反序列化生成对象结束 =====");
     }
 
-    public static void person() {
+    public static void proto_ser_person() {
         //1、 创建Builder
         Persons.Staff.Builder builder = Persons.Staff.newBuilder();
         //2、 设置Person的属性
@@ -61,5 +66,76 @@ public class Test {
             e.printStackTrace();
         }
 
+    }
+
+
+    //序列化
+    public void SerializePerson() throws Exception {
+        Person person = new Person();
+        person.setPid(1);
+        person.setPname("小明");
+        person.setScore(98.8);
+        // ObjectOutputStream 对象输出流，将Person对象存储到E盘的Person.txt文件中，完成对Person对象的序列化操作
+        ObjectOutputStream oo = new ObjectOutputStream(new FileOutputStream(
+                new File("E:/Person.txt")));
+        oo.writeObject(person);
+        System.out.println("Person对象序列化成功！");
+        oo.close();
+    }
+
+    //反序列化
+    public void DeserializePerson() throws Exception {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("E:/Person.txt")));
+        Person person = (Person) ois.readObject();
+        System.out.println("Person对象反序列化成功！");
+        System.out.println("person = " + person.toString());
+    }
+
+    public static void common_SerializeAndDeserialize() throws IOException, ClassNotFoundException {
+        Person person = new Person();
+        person.setPid(1);
+        person.setPname("小明");
+        person.setScore(98.8);
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(person);
+        byte[] bytes = bos.toByteArray();
+        System.out.println("bytes = " + Arrays.toString(bytes));
+        System.out.println("序列化成功！！！");
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bytes));
+        Person personNew = (Person) ois.readObject();
+        System.out.println("反序列化成功！！！");
+        System.out.println("personNew = " + personNew.toString());
+
+
+    }
+
+
+    /////////////////////////////////////////////////
+    //序列化
+    private static byte[] serialize() {
+        PersonModel.Person.Builder builder = PersonModel.Person.newBuilder();
+        builder.setPid(2);
+        builder.setPname("德玛");
+        builder.setScore(88.9);
+
+        PersonModel.Person person = builder.build();
+        return person.toByteArray();
+    }
+
+    //反序列化
+    private static PersonModel.Person deserialize(byte[] data) throws Exception {
+        PersonModel.Person person = PersonModel.Person.parseFrom(data);
+        return person;
+    }
+
+    public static void proto_SerializeAndDeserialize() throws Exception {
+        byte[] serialize = serialize();
+        System.out.println("序列化成功！！！");
+        System.out.println("bytes = " + Arrays.toString(serialize));
+        PersonModel.Person person = deserialize(serialize);
+        System.out.println("反序列化成功！！！");
+        System.out.println("person = " + person.getPid() + "*" + person.getPname() + "*" + person.getScore());
     }
 }

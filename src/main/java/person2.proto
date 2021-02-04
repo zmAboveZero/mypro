@@ -1,0 +1,8 @@
+syntax = "proto3";//指定使用语法
+option java_package = "protobuf";//指定包路径
+option java_outer_classname = "PersonModel";//指定外部类名字
+message Person {//内部类名字，注意和java_outer_classname区分
+    int32 pid = 1;
+    string pname = 2;
+    double score = 3;
+}
