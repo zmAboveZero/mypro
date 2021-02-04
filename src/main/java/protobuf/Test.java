@@ -12,7 +12,7 @@ public class Test {
         System.out.println("===== 构建一个GPS模型开始 =====");
         GPS.gps_data.Builder gps_builder = GPS.gps_data.newBuilder();
         gps_builder.setAltitude(1);
-        gps_builder.setDataTime("2017-12-17 16:21:44");
+        gps_builder.setDataTime("2020-12-17 16:21:44");
         gps_builder.setGpsStatus(1);
         gps_builder.setLat(39.123);
         gps_builder.setLon(120.112);
