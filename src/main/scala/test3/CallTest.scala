@@ -17,24 +17,21 @@ object CallTest {
     //runnable
 
 
-    val futreTask: FutureTask[String] = new FutureTask(result)
+    val future = new FutureTask(result)
 
 
-    println(futreTask.isDone)
-    new Thread(futreTask).start()
+    println(future.isDone)
+    new Thread(future).start()
     Thread.sleep(5000)
-    println(futreTask.isDone)
+    println(future.isDone)
 
 
-
-
-
-    //    println(futreTask.isDone)
-    //    new Thread(futreTask).start()
-    //    println(futreTask.isDone)
+    //    new Thread(future).start()
     //    Thread.sleep(6000)
-    //    println(futreTask.isDone)
-    //    println(futreTask.get())
+    //    println(future.isDone)
+    //    Thread.sleep(6000)
+    //    println(future.isDone)
+    //    println(future.get())
   }
 
 
