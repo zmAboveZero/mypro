@@ -5,12 +5,12 @@ import java.util.concurrent.{Callable, FutureTask}
 object CallTest {
   def main(args: Array[String]): Unit = {
     //
-    val result: Callable[String] = new Callable[String] {
+    val result = new Callable[String] {
       override def call() = {
         ""
       }
     }
-    val runnable: Runnable = new Runnable {
+    val runnable = new Runnable {
       override def run(): Unit = {
       }
     }
@@ -18,7 +18,6 @@ object CallTest {
 
 
     val futreTask: FutureTask[String] = new FutureTask(result)
-
 
 
     println(futreTask.isDone)
