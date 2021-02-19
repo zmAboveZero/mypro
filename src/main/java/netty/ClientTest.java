@@ -32,7 +32,7 @@ public class ClientTest {
 ////                Thread.sleep(500);
 //
 ////            }
-////            pw.println("hello server");
+////            pw.println("hello server");HFileCleaner
 ////            pw.flush();
 //            String string = br.readLine();
 //            System.out.println("Client读到：" + string);
